@@ -1,0 +1,55 @@
+INFO: 2023/08/05 20:12:03 Starting repair utility for all aspects
+INFO: 2023/08/05 20:12:03 Cashes aspect started
+INFO: 2023/08/05 20:12:03 Nothing to do here
+INFO: 2023/08/05 20:12:03 Cashes aspect finished
+INFO: 2023/08/05 20:12:03 Hashes aspect started
+INFO: 2023/08/05 20:12:03 Downloading manifest file
+WARNING: Unable to download manifest file from https://download.jetbrains.com/idea64.exe/idea64.exeIC-222.4345.14.exe.manifest: 
+	Error downloading Manifest file. Response status = 404
+INFO: 2023/08/05 20:12:05 Hashes aspect finished
+INFO: 2023/08/05 20:12:05 Logs aspect started
+INFO: 2023/08/05 20:12:05 Parsing idea.log file...
+Let's try to start the IDE to check if the issue is still here? [y/n]
+The issue still here? [y/n]
+INFO: 2023/08/05 20:12:17 Shutting down the IDE and continue repairing
+WARNING: TerminateProcess: Access is denied.
+INFO: 2023/08/05 20:12:17 Logs aspect finished
+INFO: 2023/08/05 20:12:17 Plugins aspect started
+INFO: 2023/08/05 20:12:26 No suspicious plugins found
+INFO: 2023/08/05 20:12:26 Plugins aspect finished
+INFO: 2023/08/05 20:12:27 Runtime aspect started
+ERROR: 
+The following ERRORS were found: 
+1. IDE uses java of version 17.0.4.1, but recomended version is 11
+
+Reset runtime to default? [y/n]
+There is no such option. Let me ask again:
+Reset runtime to default? [y/n]
+INFO: 2023/08/05 20:12:38 Reverting runtime to default
+INFO: 2023/08/05 20:12:38 Runtime aspect finished
+INFO: 2023/08/05 20:12:38 VmOptions aspect started
+INFO: 2023/08/05 20:12:38 Couldn't detect custom .vmoptions file for C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2.3\bin\idea64.exe
+There is nothing to do with vmoptions aspect.
+INFO: 2023/08/05 20:12:38 VmOptions aspect finished
+INFO: 2023/08/05 20:12:38 Repair utility finished execution.
+Is the error still here? [y/n]
+Let's try to restore default settings and disable custom plugins as a last troubleshooting step? [y/n]
+There is no such option. Let me ask again:
+Let's try to restore default settings and disable custom plugins as a last troubleshooting step? [y/n]
+INFO: 2023/08/05 20:12:42 Disabling all custom plugins...
+INFO: 2023/08/05 20:12:42 Custom plugins were disabled
+INFO: 2023/08/05 20:12:42 Restoring default settings...
+FATAL ERROR: goroutine 1 [running]:
+runtime/debug.Stack()
+	/usr/local/go/src/runtime/debug/stack.go:24 +0x65
+repair/logger.ExitWithExceptionOnError({0x114f900, 0xc000424ec0})
+	/src/logger/logger.go:56 +0x54
+repair/helpers.(*IDE).RemoveConfigurationDirectory(0xc000d91a40)
+	/src/helpers/files_helper.go:219 +0x28a
+repair/cmd.resetIdeSettingsAndDisableCustomPlugins()
+	/src/cmd/root.go:120 +0x133
+repair/cmd.Execute()
+	/src/cmd/root.go:45 +0x165
+main.main()
+	/src/main.go:8 +0x17
+rename C:\Users\Usuario\AppData\Roaming\JetBrains\IdeaIC2022.2\ C:\Users\Usuario\AppData\Roaming\JetBrains\IdeaIC2022.2\.old: Access is denied.
